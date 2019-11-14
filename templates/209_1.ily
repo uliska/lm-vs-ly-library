@@ -1,7 +1,9 @@
 %{
   Leopold Mozart: Violin School (1756)
 
-  Score block template - three systems
+  Score block template for the individual example 1756_209_1
+  This is needed to fake two separate examples with text in between
+  but perfect horizontal alignment.
 %}
 
 \version "2.19.80"

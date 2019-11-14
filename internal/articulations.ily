@@ -33,6 +33,7 @@
 
 % \asterisk
 % star used as a reference mark
+% created from a pedal sign
 %
 #(define asterisk-list
    `("asterisk"
@@ -46,6 +47,9 @@
 
 % \t
 % Leopold Mozart's indication of a trill: "t."
+% UPDATE: In his letters he used another rendering: "t:",
+%         therefore this has been made parametric.
+%         Standardization may be discussed in the future
 %
 #(define (make-trill-list name text)
    `(,name
@@ -65,8 +69,6 @@
 
 %% A macro setting the lists from above in the copy of `default-script-alist´
 %% For now, every new script has to be inserted in a single run.
-%% TODO
-%% Probably better to do simpler list processing with append, cons etc
 #(define-macro (set-my-script-alist! ls-1 ls-2)
    "Creates a new key-value-pair, taken from ls-2, in ls-1"
    `(set! ,ls-1
@@ -81,6 +83,7 @@
 #(set-my-script-alist! default-script-alist trill-list)
 #(set-my-script-alist! default-script-alist trill-list-brief)
 
+% Apply the updated script definition alist
 \layout {
   \context {
     \Score
@@ -94,7 +97,7 @@ asterisk-artic = #(make-articulation "asterisk")
 trill-artic = #(make-articulation "trill")
 trill-artic-brief = #(make-articulation "trill-brief")
 
-% Wrapper around the asterisk-articulation
+% \asterisk: wrapper around the asterisk-artic articulation.
 % By default we want this to be on the notehead side.
 % If an exception is desired \asterisk-artic has to be used explicitly
 
@@ -115,7 +118,7 @@ asterisk =
        -\asterisk-artic
      #}))
 
-% Event function wrapper for trill
+% Event function wrappers for trill
 t =
 #(define-event-function ()()
    #{

@@ -26,7 +26,6 @@
          ; TODO: Calculate by creating a "Tq" markup and measuring its Y-extent
          (+ 1 staff-padding))))
 
-\registerOption mozart.staff-padding-by-direction ##f
 #(define (get-current-markup-staff-padding)
    "Determine the current (at the time of parsing, e.g. of a music function)
     staff-padding for markups. This is either the pair stored in

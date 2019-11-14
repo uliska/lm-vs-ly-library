@@ -18,6 +18,9 @@
   tagline = ##f
 }
 
+% Document font settings.
+% Note that all fonts have to be installed,
+% the (commercial) Ross notation font even within the LilyPond instance
 % https://www.musictypefoundry.com/product/mtf-ross
 % https://github.com/ism-dme/lm-vs-ly/issues/6
 \useNotationFont \with {
@@ -46,7 +49,7 @@
     % The edition-engraver edition root is addressed by the current example name
     \editionID ##f #(list (string->symbol current_example))
     \remove Bar_number_engraver
-    % automatic beaming is completely deactivated to ensure correct encoding
+    % automatic beaming is completely deactivated to force correct encoding
     % for a potential future MusicXML export
     \autoBeamOff
     % Font name is set explicitly because font-series override

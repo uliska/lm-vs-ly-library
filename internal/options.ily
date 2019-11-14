@@ -20,14 +20,14 @@
 \setOption scholarly.annotate.colors.critical-remark #magenta
 \setOption scholarly.annotate.color-anchor ##f
 
-% Behandlung von mit \originalBreak kodierten originalen Umbrüchen.
-% Mögliche Werte:
-% - #'ignore (Default)
-%   ignoriere Umbrüche
+% How to deal original breaks encoded with \originalBreak and \originalPageBreak
+% Possible values:
+% - #'ignore (default)
+%   ignore breaks
 % - #'use
-%   wende originale Umbrüche an
+%   apply original breaks
 % - #'show
-%   zeige originale Umbrüche durch gestrichelte Linie an
+%   indicate original breaks with a dashed vertical line
 \registerOption mozart.config.use-original-breaks #'ignore
 
 % behaviour of \doubleBar
@@ -55,7 +55,3 @@
 % This can be used to force grobs to different common baselines
 % depending on the direction.
 \registerOption mozart.staff-padding-by-direction #'(0 . 0)
-
-
-% Load file with user overrides
-\include "../config.ily"

@@ -7,7 +7,6 @@
 
 \version "2.19.80"
 
-\loadPackage edition-engraver
 \consistToContexts #edition-engraver Score.Staff.Voice.FiguredBass
 
 % \mod
